@@ -13,6 +13,35 @@
 	padding-right: 10px;
 	position: relative;
 	flex: 0 0 1;
+
+	.close-open-file {
+		background: none;
+		border: none;
+		margin-left: -24px;
+		display: inline-block;
+		color: @text-color;
+
+		&:hover {
+			color: @text-color-highlight;
+		}
+	}
+
+	.close-open-file::before {
+		font-family: 'Octicons Regular';
+		font-weight: normal;
+		font-style: normal;
+		display: inline-block;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		text-decoration: none;
+		font-size: 12px;
+		width: 12px;
+		height: 12px;
+		content: "\f081";
+		position: relative;
+		top: -1px;
+	}
+
 }
 
 .tree-view-resizer .tree-view-scroller {

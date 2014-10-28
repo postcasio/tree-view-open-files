@@ -17,6 +17,7 @@ class TreeViewOpenFilesPaneView
 		@container.classList.add('list-tree')
 		header = document.createElement('div')
 		header.classList.add('list-item')
+
 		headerSpan = document.createElement('span')
 		headerSpan.classList.add('name', 'icon', 'icon-file-directory')
 		headerSpan.setAttribute('data-name', 'Pane')
@@ -42,6 +43,11 @@ class TreeViewOpenFilesPaneView
 			listItem = document.createElement('li')
 			listItem.classList.add('file', 'list-item')
 			listItem.setAttribute('is', 'tree-view-file')
+			closer = document.createElement('button')
+			closer.classList.add('close-open-file')
+			$(closer).on 'click', =>
+				pane.destroyItem @entryForElement(listItem).item
+			listItem.appendChild closer
 			listItemName = document.createElement('span')
 			listItemName.classList.add('name', 'icon', 'icon-file-text')
 			listItemName.setAttribute('data-path', item.getPath?())

@@ -7,4 +7,3 @@ Shows a separate collapsible list for each pane.
 ## Todo
 
 * Allow panes to be renamed
-* Add a close button to list items
