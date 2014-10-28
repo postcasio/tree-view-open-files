@@ -1,9 +1,28 @@
 @import "ui-variables";
 
+.tree-view-resizer {
+	display: -webkit-flex !important;
+	flex-direction: column;
+	align-items: stretch;
+}
+
 .tree-view-open-files {
 	width: 100%;
 	overflow: auto;
 	padding-left: 5px;
 	padding-right: 10px;
 	position: relative;
+	flex: 0 0 1;
+}
+
+.tree-view-resizer .tree-view-scroller {
+	flex: 1 1;
+	height: 100%;
+	overflow: auto;
+	position: relative;
+
+	.tree-view {
+		height: auto;
+		min-height: inherit;
+	}
 }
