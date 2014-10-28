@@ -52,10 +52,14 @@ class TreeViewOpenFilesPaneView
 			listItemName.classList.add('name', 'icon', 'icon-file-text')
 			listItemName.setAttribute('data-path', item.getPath?())
 			listItemName.setAttribute('data-name', item.getTitle?())
-			listItemName.innerText = item.getTitle?()
 			listItem.appendChild listItemName
 			@container.appendChild listItem
+			titleSub = item.onDidChangeTitle =>
+				@updateTitle item
+
+			@paneSub.add titleSub
 			@items.push item: item, element: listItem
+			@updateTitle item
 
 		@paneSub.add pane.observeActiveItem (item) =>
 			@setActiveEntry item
@@ -64,6 +68,22 @@ class TreeViewOpenFilesPaneView
 			@removeEntry item
 
 		@paneSub.add pane.onDidDestroy => @paneSub.dispose()
+
+	updateTitle: (item, siblings=true, useLongTitle=false) ->
+		title = item.getTitle()
+
+		if siblings
+			for entry in @items
+				if entry.item isnt item and entry.item.getTitle?() == title
+					@updateTitle entry.item, false, true
+					useLongTitle = true
+					break
+
+
+		if useLongTitle and item.getLongTitle?
+			title = item.getLongTitle()
+
+		$(@entryForItem(item).element).find('.name').text title
 
 	entryForItem: (item) ->
 		_.detect @items, (entry) -> entry.item is item
