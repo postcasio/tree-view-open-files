@@ -1,0 +1,17 @@
+{
+  "name": "tree-view-open-files",
+  "main": "./lib/tree-view-open-files",
+  "version": "0.0.0",
+  "description": "Show open files in a list above the tree view.",
+  "repository": "https://github.com/postcasio/tree-view-open-files",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.140.0"
+  },
+  "dependencies": {
+    "atom-utils": "0.0.1",
+    "event-kit": "^0.8.0",
+    "lodash": "^2.4.1",
+    "space-pen": "^3.8.0"
+  }
+}
