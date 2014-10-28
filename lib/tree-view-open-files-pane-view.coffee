@@ -75,10 +75,9 @@ class TreeViewOpenFilesPaneView
 
 		if siblings
 			for entry in @items
-				if entry.item isnt item
-					longTitle = entry.item.getTitle?() == title
-					useLongTitle |= longTitle
-					@updateTitle entry.item, false, longTitle
+				if entry.item isnt item and entry.item.getTitle?() == title
+					useLongTitle = true
+					@updateTitle entry.item, false, true
 
 
 		if useLongTitle and item.getLongTitle?
