@@ -1,3 +1,6 @@
+## 0.1.3
+* Fix highlighted background not covering width when list scrolls horizontally
+
 ## 0.1.2
 * Close button
 
