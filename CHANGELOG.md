@@ -1,3 +1,6 @@
+## 0.1.5
+* Fix entries losing their long titles when an item is added to the list
+
 ## 0.1.3
 * Fix highlighted background not covering width when list scrolls horizontally
 
