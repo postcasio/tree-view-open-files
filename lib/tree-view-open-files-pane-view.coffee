@@ -54,8 +54,9 @@ class TreeViewOpenFilesPaneView
 			listItemName.setAttribute('data-name', item.getTitle?())
 			listItem.appendChild listItemName
 			@container.appendChild listItem
-			titleSub = item.onDidChangeTitle =>
-				@updateTitle item
+			if item.onDidChangeTitle?
+				titleSub = item.onDidChangeTitle =>
+					@updateTitle item
 
 			@paneSub.add titleSub
 			@items.push item: item, element: listItem
@@ -74,10 +75,10 @@ class TreeViewOpenFilesPaneView
 
 		if siblings
 			for entry in @items
-				if entry.item isnt item and entry.item.getTitle?() == title
-					@updateTitle entry.item, false, true
-					useLongTitle = true
-					break
+				if entry.item isnt item
+					longTitle = entry.item.getTitle?() == title
+					useLongTitle |= longTitle
+					@updateTitle entry.item, false, longTitle
 
 
 		if useLongTitle and item.getLongTitle?
@@ -99,8 +100,11 @@ class TreeViewOpenFilesPaneView
 			@activeEntry = entry.element
 
 	removeEntry: (item) ->
-		entry = @entryForItem item
-		entry.element.remove()
+		index = _.findIndex @items, (entry) -> entry.item is item
+		@items[index].element.remove()
+		@items.splice index, 1
+
+		@updateTitle(entry.item) for entry in @items
 
 	# Returns an object that can be retrieved when package is activated
 	serialize: ->
