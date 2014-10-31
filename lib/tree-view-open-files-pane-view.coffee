@@ -58,7 +58,7 @@ class TreeViewOpenFilesPaneView
 				titleSub = item.onDidChangeTitle =>
 					@updateTitle item
 
-			@paneSub.add titleSub
+				@paneSub.add titleSub
 			@items.push item: item, element: listItem
 			@updateTitle item
 

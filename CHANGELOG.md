@@ -1,3 +1,6 @@
+## 0.1.7
+* Fix attempt to dispose undefined when a pane item has no onDidChangeTitle event
+
 ## 0.1.5
 * Fix entries losing their long titles when an item is added to the list
 
