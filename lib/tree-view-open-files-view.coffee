@@ -41,7 +41,14 @@ class TreeViewOpenFilesView
 	# Toggle the visibility of this view
 	toggle: ->
 		if @element.parentElement?
-			@element.remove()
+			@hide()
 		else
-			requirePackages('tree-view').then ([treeView]) =>
-				treeView.treeView.prepend @element
+			@show()
+
+	hide: ->
+		@element.remove()
+
+	show: ->
+		requirePackages('tree-view').then ([treeView]) =>
+			treeView.treeView.find('.tree-view-scroller').css 'background', treeView.treeView.find('.tree-view').css 'background'
+			treeView.treeView.prepend @element

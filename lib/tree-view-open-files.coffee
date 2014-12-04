@@ -2,16 +2,28 @@
 TreeViewOpenFilesView = require './tree-view-open-files-view'
 
 module.exports =
-	TreeViewOpenFilesView: null
+	treeViewOpenFilesView: null
 
 	activate: (state) ->
 		requirePackages('tree-view').then ([treeView]) =>
-			treeView.treeView.find('.tree-view-scroller').css 'background', treeView.treeView.find('.tree-view').css 'background'
-			@TreeViewOpenFilesView = new TreeViewOpenFilesView(state.TreeViewOpenFilesViewState)
-			@TreeViewOpenFilesView.toggle()
+			@treeViewOpenFilesView = new TreeViewOpenFilesView
+
+			if treeView.treeView
+				@treeViewOpenFilesView.show()
+
+			workspaceView = atom.views.getView(atom.workspace)
+
+			atom.commands.add workspaceView, 'tree-view:toggle', =>
+				if treeView.treeView.is(':visible')
+					@treeViewOpenFilesView.show()
+				else
+					@treeViewOpenFilesView.hide()
+
+			atom.commands.add workspaceView, 'tree-view:show', =>
+				@treeViewOpenFilesView.show()
 
 	deactivate: ->
-		@TreeViewOpenFilesView.destroy()
+		@treeViewOpenFilesView.destroy()
 
 	serialize: ->
 		#TreeViewOpenFilesViewState: @TreeViewOpenFilesView.serialize()
