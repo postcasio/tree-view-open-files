@@ -1,7 +1,7 @@
 {
   "name": "tree-view-open-files",
   "main": "./lib/tree-view-open-files",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Show open files in a list above the tree view.",
   "repository": "https://github.com/postcasio/tree-view-open-files",
   "license": "MIT",
