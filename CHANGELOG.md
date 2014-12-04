@@ -1,3 +1,6 @@
+## 0.1.8
+* Fix view not being attached when the tree view is initially hidden.
+
 ## 0.1.7
 * Fix attempt to dispose undefined when a pane item has no onDidChangeTitle event
 
