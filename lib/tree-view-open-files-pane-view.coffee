@@ -94,9 +94,9 @@ class TreeViewOpenFilesPaneView
 	setActiveEntry: (item) ->
 		if item
 			@activeEntry?.classList.remove 'selected'
-			entry = @entryForItem item
-			entry.element.classList.add 'selected'
-			@activeEntry = entry.element
+			if entry = @entryForItem item
+				entry.element.classList.add 'selected'
+				@activeEntry = entry.element
 
 	removeEntry: (item) ->
 		index = _.findIndex @items, (entry) -> entry.item is item

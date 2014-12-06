@@ -1,3 +1,6 @@
+## 0.1.9
+* Fix error when closing last tab
+
 ## 0.1.8
 * Fix view not being attached when the tree view is initially hidden.
 
