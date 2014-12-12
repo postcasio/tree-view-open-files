@@ -19,6 +19,9 @@ class TreeViewOpenFilesView
 				@removeTabGroup pane
 			@paneSub.add destroySub
 
+		@configSub = atom.config.observe 'tree-view-open-files.maxHeight', (maxHeight) =>
+			@element.style.maxHeight = if maxHeight > 0 then "#{maxHeight}px" else 'none'
+
 	addTabGroup: (pane) ->
 		group = new TreeViewOpenFilesPaneView
 		group.setPane pane
@@ -37,6 +40,7 @@ class TreeViewOpenFilesView
 	destroy: ->
 		@element.remove()
 		@paneSub.dispose()
+		@configSub.dispose()
 
 	# Toggle the visibility of this view
 	toggle: ->
