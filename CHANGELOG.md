@@ -1,3 +1,6 @@
+## 0.2.0
+* Add maximum height option. The list will scroll when it grows larger than this height.
+
 ## 0.1.9
 * Fix error when closing last tab
 
