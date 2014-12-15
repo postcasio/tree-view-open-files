@@ -1,3 +1,6 @@
+## 0.2.1
+* Fix an error when pane items get into a weird state.
+
 ## 0.2.0
 * Add maximum height option. The list will scroll when it grows larger than this height.
 
