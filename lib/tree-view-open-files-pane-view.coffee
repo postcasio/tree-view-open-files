@@ -83,7 +83,8 @@ class TreeViewOpenFilesPaneView
 		if useLongTitle and item.getLongTitle?
 			title = item.getLongTitle()
 
-		$(@entryForItem(item).element).find('.name').text title
+		if entry = @entryForItem(item)
+			$(entry.element).find('.name').text title
 
 	entryForItem: (item) ->
 		_.detect @items, (entry) -> entry.item is item
