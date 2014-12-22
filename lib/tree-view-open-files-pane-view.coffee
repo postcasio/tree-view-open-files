@@ -101,8 +101,10 @@ class TreeViewOpenFilesPaneView
 
 	removeEntry: (item) ->
 		index = _.findIndex @items, (entry) -> entry.item is item
-		@items[index].element.remove()
-		@items.splice index, 1
+
+		if index >= 0
+			@items[index].element.remove()
+			@items.splice index, 1
 
 		@updateTitle(entry.item) for entry in @items
 

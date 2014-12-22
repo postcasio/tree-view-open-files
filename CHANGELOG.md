@@ -1,3 +1,6 @@
+## 0.2.2
+* Fix another error with weird state.
+
 ## 0.2.1
 * Fix an error when pane items get into a weird state.
 
