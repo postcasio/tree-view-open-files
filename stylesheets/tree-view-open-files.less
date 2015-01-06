@@ -12,11 +12,52 @@
 		overflow: auto;
 		padding-left: 5px;
 		padding-right: 10px;
+		&::-webkit-scrollbar {
+			width: 1em;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: darken(@tree-view-background-color, 3%);
+			border-left: 1px solid darken(@tree-view-background-color, 1.5%);
+			border-right: 1px solid darken(@tree-view-background-color, 1.5%);
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: lighten(@tree-view-background-color, 5%);
+			border-left: 1px solid darken(@tree-view-background-color, 2%);
+			border-right: 1px solid darken(@tree-view-background-color, 2%);
+			border-radius: .5em;
+		}
+
 	}
 
 	overflow: auto;
 	flex: 0 0 1;
 	position: relative;
+	background-color: darken(@tree-view-background-color, 3%);
+	border-bottom: 1px solid lighten(@tree-view-background-color, 2%);
+	//border-bottom-left-radius: 10px;
+
+	&::-webkit-scrollbar {
+		width: 1em;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: darken(@tree-view-background-color, 3%);
+		border-left: 1px solid darken(@tree-view-background-color, 1.5%);
+		border-right: 1px solid darken(@tree-view-background-color, 1.5%);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: lighten(@tree-view-background-color, 5%);
+		border-left: 1px solid darken(@tree-view-background-color, 2%);
+		border-right: 1px solid darken(@tree-view-background-color, 2%);
+		border-radius: .5em;
+	}
+
+	&::-webkit-scrollbar-corner {
+		background: none;
+	}
 
 	.close-open-file {
 		background: none;
@@ -47,15 +88,39 @@
 	}
 
 }
-
 .tree-view-resizer .tree-view-scroller {
 	flex: 1 1;
 	height: 100%;
 	overflow: auto;
 	position: relative;
+	//border-top: 2px solid lighten(@tree-view-background-color, 2%);
+	//border-top-left-radius: 10px;
+	background-color: lighten(@tree-view-background-color, 2%);
+
+	&::-webkit-scrollbar {
+		width: 1em;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: darken(@tree-view-background-color, 3%);
+		border-left: 1px solid darken(@tree-view-background-color, 2%);
+		border-right: 1px solid darken(@tree-view-background-color, 2%);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: lighten(@tree-view-background-color, 5%);
+		border-left: 1px solid darken(@tree-view-background-color, 2%);
+		border-right: 1px solid darken(@tree-view-background-color, 2%);
+		border-radius: .5em;
+	}
+
+	&::-webkit-scrollbar-corner {
+		background: darken(@tree-view-background-color, 3%);
+	}
 
 	.tree-view {
 		height: auto;
 		min-height: inherit;
+
 	}
 }
