@@ -1,3 +1,6 @@
+## 0.2.3
+* Show modified status
+
 ## 0.2.2
 * Fix another error with weird state.
 
