@@ -59,6 +59,10 @@ class TreeViewOpenFilesPaneView
 					@updateTitle item
 
 				@paneSub.add titleSub
+			if item.onDidChangeModified?
+				@paneSub.add item.onDidChangeModified (modified) =>
+					@updateModifiedState item, modified
+
 			@items.push item: item, element: listItem
 			@updateTitle item
 
@@ -85,6 +89,11 @@ class TreeViewOpenFilesPaneView
 
 		if entry = @entryForItem(item)
 			$(entry.element).find('.name').text title
+
+	updateModifiedState: (item, modified) ->
+		entry = @entryForItem(item)
+
+		entry?.element.classList.toggle 'modified', modified
 
 	entryForItem: (item) ->
 		_.detect @items, (entry) -> entry.item is item
