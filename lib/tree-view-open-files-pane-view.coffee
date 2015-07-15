@@ -8,7 +8,15 @@ class TreeViewOpenFilesPaneView
 		@items = []
 		@activeItem = null
 		@paneSub = new CompositeDisposable
-
+		# -----------------------------------------------------------------------------------------------------------
+		# Agustin Ignacio Kanner <agustinkanner@gmail.com>
+		@headerSpan = document.createElement('span')
+		@headerSpan.classList.add('name', 'icon', 'icon-file-directory','opened-files-pane-text')
+		@headerSpan.setAttribute('data-name', 'Pane')
+		#defines a callback for the event that will be produced when the title of the pane change in the configuration
+		@NameChangeEventSubscription = atom.config.observe 'tree-view-open-files.title',
+		(title) => @headerSpan.innerText = title
+		#-------------------------------------------------------------------------------------------------------------
 		@element = document.createElement('ul')
 		@element.classList.add('list-tree', 'has-collapsable-children')
 		nested = document.createElement('li')
@@ -17,12 +25,7 @@ class TreeViewOpenFilesPaneView
 		@container.classList.add('list-tree')
 		header = document.createElement('div')
 		header.classList.add('list-item')
-
-		headerSpan = document.createElement('span')
-		headerSpan.classList.add('name', 'icon', 'icon-file-directory')
-		headerSpan.setAttribute('data-name', 'Pane')
-		headerSpan.innerText = 'Pane'
-		header.appendChild headerSpan
+		header.appendChild @headerSpan
 		nested.appendChild header
 		nested.appendChild @container
 		@element.appendChild nested
@@ -124,3 +127,4 @@ class TreeViewOpenFilesPaneView
 	destroy: ->
 		@element.remove()
 		@paneSub.dispose()
+		@NameChangeEventSubscription.dispose()
