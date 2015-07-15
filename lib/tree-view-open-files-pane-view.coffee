@@ -11,7 +11,7 @@ class TreeViewOpenFilesPaneView
 		# -----------------------------------------------------------------------------------------------------------
 		# Agustin Ignacio Kanner <agustinkanner@gmail.com>
 		@headerSpan = document.createElement('span')
-		@headerSpan.classList.add('name', 'icon', 'icon-file-directory','opened-files-pane-text')
+		@headerSpan.classList.add('name', 'icon', 'icon-file-directory')
 		@headerSpan.setAttribute('data-name', 'Pane')
 		#defines a callback for the event that will be produced when the title of the pane change in the configuration
 		@NameChangeEventSubscription = atom.config.observe 'tree-view-open-files.title',
