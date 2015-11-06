@@ -10,6 +10,11 @@ module.exports =
 			default: 250
 			min: 0
 			description: 'Maximum height of the list before scrolling is required. Set to 0 to disable scrolling.'
+		# Agustin Ignacio Kanner <agustinkanner@gmail.com>
+		title:
+			type: 'string'
+			default: 'WORKING FILES'
+			description: 'Title of the panel'
 
 	activate: (state) ->
 		requirePackages('tree-view').then ([treeView]) =>
