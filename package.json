@@ -6,10 +6,10 @@
   "repository": "https://github.com/postcasio/tree-view-open-files",
   "license": "MIT",
   "engines": {
-    "atom": ">=0.140.0"
+    "atom": ">=1.1.0"
   },
   "dependencies": {
-    "atom-utils": ">=0.6.3",
+    "atom-utils": ">=0.7.4",
     "event-kit": "^0.8.0",
     "lodash": "^2.4.1",
     "space-pen": "^3.8.0"
