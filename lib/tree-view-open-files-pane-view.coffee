@@ -53,7 +53,7 @@ class TreeViewOpenFilesPaneView
 			listItemName.setAttribute('data-path', item.getPath?())
 			listItemName.setAttribute('data-name', item.getTitle?())
 			listItem.appendChild listItemName
-			@container.appendChild listItem
+			@container.insertBefore(listItem, @activeEntry?.nextSibling);
 			if item.onDidChangeTitle?
 				titleSub = item.onDidChangeTitle =>
 					@updateTitle item
@@ -71,6 +71,11 @@ class TreeViewOpenFilesPaneView
 
 		@paneSub.add pane.onDidRemoveItem ({item}) =>
 			@removeEntry item
+
+		@paneSub.add pane.onDidMoveItem ({item, oldIndex, newIndex}) =>
+			movedEntry = @entryForItem item
+			@container.removeChild(movedEntry.element)
+			@container.insertBefore(movedEntry.element, @container.children[newIndex]);
 
 		@paneSub.add pane.onDidDestroy => @paneSub.dispose()
 
