@@ -10,6 +10,11 @@ module.exports =
 			default: 250
 			min: 0
 			description: 'Maximum height of the list before scrolling is required. Set to 0 to disable scrolling.'
+		minHeight:
+			type: 'integer'
+			default: 0
+			min: 0
+			description: 'Minimum height of the list. Set to 0 to disable scrolling.'
 
 	activate: (state) ->
 		requirePackages('tree-view').then ([treeView]) =>
