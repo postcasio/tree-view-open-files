@@ -22,6 +22,9 @@ class TreeViewOpenFilesView
 		@configSub = atom.config.observe 'tree-view-open-files.maxHeight', (maxHeight) =>
 			@element.style.maxHeight = if maxHeight > 0 then "#{maxHeight}px" else 'none'
 
+		@configSub = atom.config.observe 'tree-view-open-files.overflow', (overflow) =>
+			@element.style.overflow = if overflow then "visible" else 'auto'
+
 	addTabGroup: (pane) ->
 		group = new TreeViewOpenFilesPaneView
 		group.setPane pane

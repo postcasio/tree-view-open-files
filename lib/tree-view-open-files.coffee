@@ -11,6 +11,16 @@ module.exports =
 			min: 0
 			description: 'Maximum height of the list before scrolling is required. Set to 0 to disable scrolling.'
 
+		overflow:
+			type: 'boolean'
+			default: true
+			description: 'If checked list will be expanded with opening files (overflow: visible)'
+
+		filePath:
+			type: 'boolean'
+			default: true
+			description: 'Show file paths after file name'
+
 	activate: (state) ->
 		requirePackages('tree-view').then ([treeView]) =>
 			@treeViewOpenFilesView = new TreeViewOpenFilesView
