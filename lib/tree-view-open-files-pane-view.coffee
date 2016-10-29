@@ -88,7 +88,36 @@ class TreeViewOpenFilesPaneView
 			title = item.getLongTitle()
 
 		if entry = @entryForItem(item)
-			$(entry.element).find('.name').text title
+			$(entry.element).find('.name').text(title)
+
+			atom.config.observe 'tree-view-open-files.filePath', (filePath) =>
+				if filePath
+					if itemPath = item.getPath?()
+						titlePathElement = document.createElement('span')
+						titlePathElement.setAttribute('class', 'file-path')
+
+						projectDirElement = document.createElement('span')
+						projectDirElement.setAttribute('class', 'project-dir-name')
+						titlePathElement.textContent = '  <- '
+
+						for rootDir in atom.project.rootDirectories
+							if itemPath.indexOf(rootDir.path) > -1
+								itemPath = itemPath.replace(rootDir.path, '')
+								if atom.project.rootDirectories.length > 1
+									projectName = rootDir.path.split('/').slice(-1)[0]
+								else
+									projectName = '...'
+
+
+						projectDirElement.textContent = projectName
+						itemPathElement = document.createElement('span')
+						itemPathElement.textContent = itemPath
+						titlePathElement.appendChild(projectDirElement)
+						titlePathElement.appendChild(itemPathElement)
+
+						$(entry.element).find('.name').append titlePathElement
+				else
+					$(entry.element).find('.name').find('.file-path').remove()
 
 	updateModifiedState: (item, modified) ->
 		entry = @entryForItem(item)

@@ -14,7 +14,16 @@
 	position: relative;
 	order: 0;
 
+	.file-path {
+		color: rgba(171, 173, 164, 0.33);
+
+		.project-dir-name {
+			font-weight: bold;
+		}
+	}
+
 	.close-open-file {
+		visibility: hidden;
 		background: none;
 		border: none;
 		margin-left: -24px;
@@ -23,6 +32,12 @@
 
 		&:hover {
 			color: @text-color-highlight;
+		}
+	}
+
+	.list-item:hover {
+		.close-open-file {
+			visibility: visible;
 		}
 	}
 

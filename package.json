@@ -1,17 +1,65 @@
 {
-  "name": "tree-view-open-files",
-  "main": "./lib/tree-view-open-files",
-  "version": "0.3.0",
-  "description": "Show open files in a list above the tree view.",
-  "repository": "https://github.com/postcasio/tree-view-open-files",
-  "license": "MIT",
-  "engines": {
-    "atom": ">=1.1.0"
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-116928-7039-k171f1/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-116928-7039-k171f1/package.tgz",
+        "spec": "/tmp/d-116928-7039-k171f1/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-116928-7039-7s29xr"
+    ]
+  ],
+  "_from": "../d-116928-7039-k171f1/package.tgz",
+  "_id": "tree-view-open-files@0.3.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/tree-view-open-files",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-116928-7039-k171f1/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-116928-7039-k171f1/package.tgz",
+    "spec": "/tmp/d-116928-7039-k171f1/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-116928-7039-k171f1/package.tgz",
+  "_shasum": "8cca29fd0bfa05c2a4c593ce0b86377220c2e514",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-116928-7039-k171f1/package.tgz",
+  "_where": "/tmp/apm-install-dir-116928-7039-7s29xr",
+  "bugs": {
+    "url": "https://github.com/postcasio/tree-view-open-files/issues"
   },
   "dependencies": {
     "atom-utils": ">=0.7.4",
     "event-kit": "^0.8.0",
     "lodash": "^2.4.1",
     "space-pen": "^3.8.0"
-  }
+  },
+  "description": "Show open files in a list above the tree view.",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.1.0"
+  },
+  "homepage": "https://github.com/postcasio/tree-view-open-files#readme",
+  "license": "MIT",
+  "main": "./lib/tree-view-open-files",
+  "name": "tree-view-open-files",
+  "optionalDependencies": {},
+  "readme": "# tree-view-open-files\n\nShow open files in a list above the tree view. (like Sublime Text)\n\nShows a separate collapsible list for each pane.\n\n## Todo\n\n* Allow panes to be renamed\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/postcasio/tree-view-open-files.git"
+  },
+  "version": "0.3.0"
 }
