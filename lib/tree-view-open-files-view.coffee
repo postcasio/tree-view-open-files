@@ -19,10 +19,10 @@ class TreeViewOpenFilesView
 				@removeTabGroup pane
 			@paneSub.add destroySub
 
-		@configSub = atom.config.observe 'tree-view-open-files.maxHeight', (maxHeight) =>
+		@configSub = atom.config.observe 'tree-view-open-files-updated.maxHeight', (maxHeight) =>
 			@element.style.maxHeight = if maxHeight > 0 then "#{maxHeight}px" else 'none'
 
-		@configSub = atom.config.observe 'tree-view-open-files.minHeight', (minHeight) =>
+		@configSub = atom.config.observe 'tree-view-open-files-updated.minHeight', (minHeight) =>
 			@element.style.minHeight = if minHeight > 0 then "#{minHeight}px" else 'none'
 
 	addTabGroup: (pane) ->
