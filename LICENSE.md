@@ -1,3 +1,5 @@
+Updated version: Copyright (c) 2016 Gordienco Sergiu
+
 Copyright (c) 2014 Dominic Adelaar
 
 Permission is hereby granted, free of charge, to any person obtaining
