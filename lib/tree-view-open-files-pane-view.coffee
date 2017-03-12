@@ -19,7 +19,7 @@ class TreeViewOpenFilesPaneView
 		header.classList.add('list-item')
 
 		headerSpan = document.createElement('span')
-		headerSpan.classList.add('name', 'icon', 'icon-file-directory')
+		headerSpan.classList.add('name', 'icon', 'icon-browser')
 		headerSpan.setAttribute('data-name', 'Pane')
 		headerSpan.innerText = 'Pane'
 		header.appendChild headerSpan
