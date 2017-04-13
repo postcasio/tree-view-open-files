@@ -54,5 +54,5 @@ class TreeViewOpenFilesView
 
 	show: ->
 		requirePackages('tree-view').then ([treeView]) =>
-			treeView.treeView.find('.tree-view-scroller').css 'background', treeView.treeView.find('.tree-view').css 'background'
-			treeView.treeView.prepend @element
+			treeView.treeView.scroller.style.background = getComputedStyle(treeView.treeView.element).background
+			treeView.treeView.element.insertBefore(@element, treeView.treeView.element.firstChild)

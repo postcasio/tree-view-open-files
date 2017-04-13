@@ -19,7 +19,7 @@ module.exports =
 				@treeViewOpenFilesView.show()
 
 			atom.commands.add 'atom-workspace', 'tree-view:toggle', =>
-				if treeView.treeView?.is(':visible')
+				if treeView.treeView?.isVisible()
 					@treeViewOpenFilesView.show()
 				else
 					@treeViewOpenFilesView.hide()
