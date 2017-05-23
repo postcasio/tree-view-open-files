@@ -13,16 +13,13 @@ module.exports =
 
 	activate: (state) ->
 		requirePackages('tree-view').then ([treeView]) =>
-			@treeViewOpenFilesView = new TreeViewOpenFilesView
+			@treeViewOpenFilesView = new TreeViewOpenFilesView(treeView)
 
 			if treeView.treeView
 				@treeViewOpenFilesView.show()
 
 			atom.commands.add 'atom-workspace', 'tree-view:toggle', =>
-				if treeView.treeView?.isVisible()
-					@treeViewOpenFilesView.show()
-				else
-					@treeViewOpenFilesView.hide()
+				@treeViewOpenFilesView.toggle()
 
 			atom.commands.add 'atom-workspace', 'tree-view:show', =>
 				@treeViewOpenFilesView.show()
@@ -31,4 +28,3 @@ module.exports =
 		@treeViewOpenFilesView.destroy()
 
 	serialize: ->
-		#TreeViewOpenFilesViewState: @TreeViewOpenFilesView.serialize()
