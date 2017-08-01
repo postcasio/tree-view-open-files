@@ -40,6 +40,9 @@ class TreeViewOpenFilesPaneView
 		@pane = pane
 
 		@paneSub.add pane.observeItems (item) =>
+			if !item.getPath?()
+				return
+			@container.parentElement.parentElement.setAttribute("data-is-pane-active", "true")
 			listItem = document.createElement('li')
 			listItem.classList.add('file', 'list-item')
 			listItem.setAttribute('is', 'tree-view-file')

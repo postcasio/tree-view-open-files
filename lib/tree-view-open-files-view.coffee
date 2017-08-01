@@ -53,9 +53,11 @@ class TreeViewOpenFilesView
 			@show()
 
 	hide: ->
-		@element.remove()
-
+		# @element.remove()
+		Array::slice.call(treeView.treeView.list.parentElement.querySelector('.tree-view-open-files')).forEach (node) ->
+			node.parentElement.removeChild node
+			return
 	show: ->
 		requirePackages('tree-view').then ([treeView]) =>
-			treeView.treeView.find('.tree-view-scroller').css 'background', treeView.treeView.find('.tree-view').css 'background'
-			treeView.treeView.prepend @element
+			# treeView.treeView.find('.tree-view-scroller').css 'background', treeView.treeView.find('.tree-view').css 'background'
+			treeView.treeView.list.parentElement.insertBefore @element , treeView.treeView.list

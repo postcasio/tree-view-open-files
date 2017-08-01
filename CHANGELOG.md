@@ -1,3 +1,7 @@
+## 0.5.0
+* Add support for atom 1.18.0
+
+
 ## 0.2.3
 * Show modified status
 

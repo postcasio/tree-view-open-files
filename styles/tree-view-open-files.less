@@ -3,6 +3,13 @@
 .tree-view-open-files {
 	border-bottom: 1px solid rgba(128, 128, 128, 0.25);
 }
+.tree-view-open-files > ul {
+	display: none;
+}
+
+.tree-view-open-files > ul[data-is-pane-active="true"] {
+	display: block;
+}
 
 .tree-view-open-files {
 	position: relative;
