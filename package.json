@@ -1,9 +1,9 @@
 {
-  "name": "tree-view-open-files",
+  "name": "tree-view-open-files-updated",
   "main": "./lib/tree-view-open-files",
-  "version": "0.3.0",
-  "description": "Show open files in a list above the tree view.",
-  "repository": "https://github.com/postcasio/tree-view-open-files",
+  "version": "1.1.0",
+  "description": "Show open files in a list above the tree view. Added additional functions.",
+  "repository": "https://github.com/sergiu-gordienco/tree-view-open-files",
   "license": "MIT",
   "engines": {
     "atom": ">=1.1.0"

@@ -1,6 +1,20 @@
 @import "ui-variables";
 
 .tree-view-open-files {
+	border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+}
+.tree-view-open-files > ul {
+	display: none;
+}
+
+.tree-view-open-files > ul[data-is-pane-active="true"] {
+	display: block;
+}
+
+.tree-view-open-files {
+	position: fixed;
+	top: 20px;
+
 	> .list-tree {
 		width: 100%;
 		overflow: auto;
@@ -11,8 +25,8 @@
 
 	overflow: auto;
 	flex: 0 0 1;
-	position: relative;
 	order: 0;
+	z-index: 2;
 
 	.close-open-file {
 		background: none;
