@@ -12,7 +12,8 @@
 }
 
 .tree-view-open-files {
-	position: relative;
+	position: fixed;
+	top: 20px;
 
 	> .list-tree {
 		width: 100%;
@@ -24,8 +25,8 @@
 
 	overflow: auto;
 	flex: 0 0 1;
-	position: relative;
 	order: 0;
+	z-index: 2;
 
 	.close-open-file {
 		background: none;
